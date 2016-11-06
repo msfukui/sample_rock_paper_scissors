@@ -1,0 +1,54 @@
+@startuml
+
+' Use:
+'   http://sujoyu.github.io/plantuml-previewer/
+
+title じゃんけんのオブジェクト図
+
+object main {
+}
+
+object 場 {
+  参加者たち
+  参加する()
+  勝負を判定する()
+}
+
+object 一人目 {
+ 今の手
+ 手を決める()
+}
+
+object 二人目 {
+ 今の手
+ 手を決める()
+}
+
+object 勝負の結果 {
+  判定日時
+  勝った人
+}
+
+object 手 {
+  グー
+  チョキ
+  パー
+}
+
+main -- 場
+
+main -- 一人目
+
+main -- 二人目
+
+一人目 ..o 場
+
+二人目 ..o 場
+
+場 -- 勝負の結果
+
+手 ..o 一人目
+
+手 ..o 二人目
+
+@enduml
